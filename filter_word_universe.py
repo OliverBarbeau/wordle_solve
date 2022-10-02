@@ -1,5 +1,4 @@
 import re
-from print_list import print_list
 # data structure for guess results
 # list of tuples
 # [(w,1), (o,2), (r,0), (s,0), (t,0)]
@@ -20,20 +19,13 @@ from print_list import print_list
 #    remove words that do not contain this letter.
 
 # GIVE USER SAMPLE FIRST GUESS "audio"
-
 # USER ENTERS FIRST GUESS
-
 # sample_guess_result of "audio"
-
-
-# possible_words = testing_possible_words
-
 # sample_guess_result = [('d',2), ('o',1), ('w',0), ('r',0), ('y',0)]
 
-def filter_word_universe(possible_words, guess_result):
+def filter_word_universe(possible_words : list[str], guess_result : list[tuple]):
     letter_position = 0
     for letter, result_code in guess_result:
-
         # 0. letter not in word
         if result_code == 0:
             #print(letter, ": is not in word here\n")
@@ -65,18 +57,12 @@ def filter_word_universe(possible_words, guess_result):
         # 2. letter is in word, not correct position
         elif result_code == 2:
             #print(letter, ": is in word, not in position: ", letter_position)
-
             possible_words = [word for word in possible_words if letter in word]
-            
             if guess_result.count((letter,2)) > 1:
                 #print("There is more than one of this letter ")
                 possible_words = [word for word in possible_words if (word.count(letter) >= 2)]
-            
-            
             # remove words that contain this letter in this position
             # remove words that do not contain this letter
-
-            
             pattern = ((letter_position)*".") + letter + ((4-letter_position)*".")
             possible_words = [word for word in possible_words if (re.match(pattern, word) is None)]  
         letter_position += 1

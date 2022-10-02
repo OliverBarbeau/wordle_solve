@@ -1,5 +1,4 @@
 from get_word_list import get_word_list
-from print_list import print_list
 from filter_word_universe import filter_word_universe
 from compare_guess_to_answer import compare_guess_to_answer
 
@@ -12,18 +11,16 @@ from compare_guess_to_answer import compare_guess_to_answer
 # sample = "thhis is a string"
 # sample = sample.replace("h", "", 1)
 # print(sample.find("x"))
-def solve_on_answer(word_list_version="words_10", answer="crane", opening_guess=None):
-
+def solve_on_answer(answer : str ="crane", opening_guess : str = None):
     word_test_loop = True
     guess_count = 0
     guesses = []
-    possible_words = get_word_list(word_list_version)
+    possible_words = get_word_list()
     while word_test_loop:
         #print("guesses made: ", guess_count)
         #print("making a new guess...")
         guess_result = []
         letters_entered = 0
-
         #get the guess
         try:
             guess_word = possible_words[0]
@@ -44,16 +41,12 @@ def solve_on_answer(word_list_version="words_10", answer="crane", opening_guess=
         #print("result code is: ", guess_result_string)
         if guess_result_string == "11111" or len(possible_words) == 0:
             guess_count += 1
-
             if guess_count > 6:
                 guess_count = "X"
             word_test_loop = False
             break
-
         #print("guess result is: ", guess_result)
-
         possible_words = filter_word_universe(possible_words, guess_result)
-
         guess_count += 1
         if guess_count > 6: word_test_loop = False
     return guesses

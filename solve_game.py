@@ -1,25 +1,19 @@
 from get_word_list import get_word_list
-from print_list import print_list
 from filter_word_universe import filter_word_universe
 
 def solve_game():
     possible_words = get_word_list()
     print('number of words is:', len(possible_words))
-
-    # user loop to help with playing a round of the game, enter guess results they recieve from wordle.
+    # user loop to help with playing a round of the game, enter guess results user recieves from wordle.
     solve_loop = True
     guess_count = 0
     print("Grey -> 0\nGreen -> 1\nYellow -> 2\n")
-
     while solve_loop:
-        
         print("Suggested guesses:")
-        print_list(possible_words, 10)
+        print(*possible_words[:10], sep = "\n")
         # USER MANUALLY ENTERS GUESS RESULT FROM WORDLE GAME
         guess_result = []
         letters_entered = 0
-
-        
         correct_user_input = False
         while (not correct_user_input):
             guess_word = input("Enter the word you played:\n").lower()
@@ -46,5 +40,7 @@ def solve_game():
 
         guess_count += 1
         if guess_count > 6: solve_loop = False
-solve_game()
-
+        
+        
+if __name__ == '__main__':
+        solve_game()

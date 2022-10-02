@@ -3,3 +3,6 @@ __pycache__
 build
 dist
 *.spec
+*.csv
+!sorted_5_letter_words.csv
+!wordle_solution_history.csv
