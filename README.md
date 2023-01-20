@@ -15,6 +15,6 @@ Questions: DM `Oliverinspace#0048` on Discord.
 
 
 ## Features
-- Game: play a round of the game, a random solution word is choosen from the universe of possible words unless a solution word is passed.
+- Game: play a round of the game, a random solution word is chosen from the universe of possible words unless a solution word is passed.
 - Solve Game: tool to suggest solution words while playing elsewhere. 
 
