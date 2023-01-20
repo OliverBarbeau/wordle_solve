@@ -1,4 +1,4 @@
-# wordlebot
+# wordle_solve
 A Python 3.10 script set that assists a player in The New York Times Wordle, displaying next guess suggestions. 
 
 Questions: DM `Oliverinspace#0048` on Discord.
