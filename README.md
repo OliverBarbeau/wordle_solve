@@ -5,7 +5,7 @@ Questions: DM `Oliverinspace#0048` on Discord.
 
 ## How to run
 - Clone the project
-- Install Python 3.10 from https://www.python.org/ (you can probably use an older version too)
+- Install Python 3.10 from https://www.python.org/ (you can probably use an older or newer version too)
 - Install the requirements listed in `requirements.txt` with `pip`
   - use `python -m pip install -r requirements.txt` at the root of the project
   - consult this guide if you need help with pip https://packaging.python.org/tutorials/installing-packages/
